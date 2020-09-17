@@ -60,6 +60,6 @@ class UnsplashAsset extends Model
      */
     public function getFullCopyrightLink()
     {
-        return "Photo by <a href='{$this->author_link}?utm_source=" . config('unsplash.app_name', 'your_app_name') . "&utm_medium=referral'>{$this->author}</a> on <a href='https://unsplash.com/?utm_source=" . config('unsplash.app_name', 'your_app_name') . "&utm_medium=referral'>Unsplash</a>";
+        return "Photo by <a href='{$this->author_link}?utm_source=" . config('unsplash.app_name', 'your_app_name') . "&utm_medium=referral' target='_blank'>{$this->author}</a> on <a href='https://unsplash.com/?utm_source=" . config('unsplash.app_name', 'your_app_name') . "&utm_medium=referral' target='_blank'>Unsplash</a>";
     }
 }
