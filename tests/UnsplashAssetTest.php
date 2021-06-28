@@ -76,9 +76,11 @@ class UnsplashAssetTest extends TestCase
             'author_link' => 'https://unsplash.com/@john_doe',
         ]);
 
+        $appName = config('unsplash.app_name', 'your_app_name');
+
         $this->assertEquals(
             $asset->getFullCopyrightLink(),
-            "Photo by <a target='_blank' href='{$asset->author_link}'>{$asset->author}</a> on <a target='_blank' href='https://unsplash.com/'>Unsplash</a>"
+            "Photo by <a href='{$asset->author_link}?utm_source={$appName}&utm_medium=referral' target='_blank'>{$asset->author}</a> on <a href='https://unsplash.com/?utm_source={$appName}&utm_medium=referral' target='_blank'>Unsplash</a>"
         );
     }
 
